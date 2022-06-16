@@ -1,3 +1,6 @@
+// Example of legacy need to import this "Reace" module.
+import React from "react";
+
 import Expenses from "./components/Expenses";
 
 function App() {
@@ -29,6 +32,14 @@ function App() {
       <Expenses expenses={expenses} />
     </div>
   );
+
+  /*   // Example of the above code after it's transformed by React.
+    return React.createElement(
+      "div",
+      {},
+      React.createElement("h2", {}, "Let's get started!"),
+      React.createElement(Expenses, { expenses: expenses })
+    ); */
 }
 
 export default App;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // Set some default state values.
   const defaultTitle = "";
   const defaultAmount = "";
@@ -51,7 +51,8 @@ const ExpenseForm = () => {
       date: new Date(enteredDate)
     };
 
-    console.log(expenseData);
+    // Call the parent function
+    props.onSaveExpenseData(expenseData);
 
     // Reset states back to default values after "Submit"
     setEnteredTitle(defaultTitle);
